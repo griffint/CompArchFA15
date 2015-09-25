@@ -19,11 +19,11 @@ or orgate2(nA2ornB2, nA, nB); // and gate produces nAandnB from nA and nB
 
 //code for ~(A+B)
 wire nA3orB3;
-or orgate3(nA3orB3, A, B); // and gate produces nAorB from A and B
+nor orgate3(nA3orB3, A, B); // and gate produces nAorB from A and B
 
 //code for ~(AB)
 wire nA4andB4;
-and andgate2(nA4andB4, A, B); // and gate produces nAandB from A and B
+nand andgate2(nA4andB4, A, B); // and gate produces nAandB from A and B
 
 //now to add test signals and display outputs
 initial begin

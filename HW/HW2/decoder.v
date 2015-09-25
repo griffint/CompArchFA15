@@ -10,16 +10,30 @@ output out0, out1, out2, out3;
 input address0, address1;
 input enable;
   // Your decoder code here
+
+	//intermediate wires
+	wire nA0; //after the inverter
+	wire nA1; //after the inverter
+
+	//now for the gates - 2 ands for enable, 2 inverters, 4 output ands
+	not A0inv(nA0, address0);
+	not A1inv(nA1, address1);
+	and D0and(out0, nA0, nA1, enable);
+	and D1and(out1, address0, nA1, enable);
+	and D2and(out2, nA0, address1, enable);
+	and D3and(out3, address0, address1, enable); 
+	
 endmodule
 
 module testDecoder; 
 reg addr0, addr1;
 reg enable;
 wire out0,out1,out2,out3;
-behavioralDecoder decoder (out0,out1,out2,out3,addr0,addr1,enable);
-//structuralDecoder decoder (out0,out1,out2,out3,addr0,addr1,enable); // Swap after testing
+//behavioralDecoder decoder (out0,out1,out2,out3,addr0,addr1,enable);
+structuralDecoder decoder (out0,out1,out2,out3,addr0,addr1,enable); // Swap after testing
 
 initial begin
+//test code that ben wrote
 $display("En A0 A1| O0 O1 O2 O3 | Expected Output");
 enable=0;addr0=0;addr1=0; #1000 
 $display("%b  %b  %b |  %b  %b  %b  %b | All false", enable, addr0, addr1, out0, out1, out2, out3);
