@@ -1,4 +1,4 @@
-module behavioralFullAdder(sum, carryout, a, b, carryin);
+module behavioralFullAdder(output[7:0] sum, output carryout,input[7:0] a,input[7:0] b, input carryin);
 output sum, carryout;
 input a, b, carryin;
 assign {carryout, sum}=a+b+carryin;
@@ -24,8 +24,8 @@ endmodule
 module testFullAdder;
 reg a, b, carryin;
 wire sum, carryout;
-behavioralFullAdder adder (sum, carryout, a, b, carryin);
-//structuralFullAdder adder(sum, carryout, a , b, carryin);
+//behavioralFullAdder adder (sum, carryout, a, b, carryin);
+structuralFullAdder adder(sum, carryout, a , b, carryin);
 
 initial begin
   // Your test code here

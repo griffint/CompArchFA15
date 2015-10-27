@@ -7,7 +7,7 @@ wire[1:0] address = {address1, address0};
 assign out = inputs[address];
 endmodule
 
-module structuralMultiplexer(out, address0,address1, in0,in1,in2,in3);
+module structuralMultiplexer(out, address0,address1, in0,in1,in2,in3,in4);
 output out;
 input address0, address1;
 input in0, in1, in2, in3;

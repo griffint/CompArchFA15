@@ -1,6 +1,4 @@
-module behavioralFullAdder(sum, carryout, a, b, carryin);
-output sum, carryout;
-input a, b, carryin;
+module behavioralFullAdder(output[7:0] sum, output carryout,input[7:0] a,input[7:0] b, input carryin);
 assign {carryout, sum}=a+b+carryin;
 endmodule
 

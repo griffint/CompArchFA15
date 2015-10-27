@@ -18,9 +18,9 @@ not na0inv(na0, address0);
 not na1inv(na1, address1);
 //ands for the actual outputs, these will have 3 inputs apiece
 wire and0wire, and1wire, and2wire, and3wire;
-and in0and(and0wire, na0inv, na1inv, in0);
-and in1and(and1wire, address0, na1inv, in1);
-and in2and(and2wire, na0inv, address1, in2);
+and in0and(and0wire, na0, na1, in0);
+and in1and(and1wire, address0, na1, in1);
+and in2and(and2wire, na0, address1, in2);
 and in3and(and3wire, address0, address1, in3);
 //final or gate with 4 inputs
 or finalor(out, and0wire, and1wire, and2wire, and3wire);
