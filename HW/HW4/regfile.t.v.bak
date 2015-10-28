@@ -173,12 +173,6 @@ output reg		Clk
     $display("Test Case 4 Failed");
   end
 
-//Test Case 5:
-//Port 2 is broken and always reads register 17
-//set register 17 to something, try to read from 0
-//if we get all 0's it's working,
-//otherwise bad things
-
 
   // All done!  Wait a moment and signal test completion.
   #5

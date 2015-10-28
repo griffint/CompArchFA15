@@ -91,7 +91,7 @@ wire[31:0] register31read;
 register32 register31(register31read, WriteData, decoderout[31], Clk); 
 
 //now we need to make the multiplexors
-mux32to1by32 mux1( ReadData1, ReadRegister1, 
+mux32to1by32 mux0( ReadData1, ReadRegister1, 
 register0read, 
 register1read, 
 register2read, 
@@ -125,7 +125,7 @@ register29read,
 register30read, 
 register31read);
 
-mux32to1by32 mux2( ReadData2, ReadRegister2, 
+mux32to1by32 mux1( ReadData2, ReadRegister2, 
 register0read, 
 register1read, 
 register2read, 

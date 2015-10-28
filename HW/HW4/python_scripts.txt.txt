@@ -1,0 +1,2 @@
+for i in range (1,32):
+    print("wire[31:0] register{0}read; \nregister32 register{0}(register{0}read, WriteData, decoderout[{0}, Clk); ".format(i))
